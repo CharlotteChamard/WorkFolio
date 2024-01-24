@@ -1,3 +1,6 @@
+import DesignServicesOutlinedIcon from '@mui/icons-material/DesignServicesOutlined';
+import AccessibleOutlinedIcon from '@mui/icons-material/AccessibleOutlined';
+import DvrOutlinedIcon from '@mui/icons-material/DvrOutlined';
 export const About = () => {
     return (
         <div>
@@ -7,9 +10,9 @@ export const About = () => {
                 À la recherche d'un stage d'une durée de 3 mois dès mi-juin 2024.
                 Secteurs de prédilections :
                 <ul>
-                    <li>Design UX/UI</li>
-                    <li>Santé : Accessibilité, Handicap</li>
-                    <li>Informatique</li>
+                    <li> <DesignServicesOutlinedIcon /> Design UX/UI</li>
+                    <li> <AccessibleOutlinedIcon /> Santé : Accessibilité, Handicap</li>
+                    <li> <DvrOutlinedIcon /> Informatique</li>
                 </ul>
             </p>
         </div>

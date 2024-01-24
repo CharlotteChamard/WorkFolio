@@ -1,19 +1,15 @@
 import logo from '../images/Logo_WorkFolio.png'
-
+import { NavBarre } from '../component/NavBarre'
 import { About } from '../component/About'
-import { ENSC } from './ENSC'
-import { Contact } from './Contact'
+
 export const Home = () => {
     return (
         <main className="page accueil">
             <header>
-                
+                <NavBarre />
             </header>
-            <h1>WorkFolio</h1>
-            <img src={logo} className="WorkFolio-Logo" alt="logo" />
+            <img src={logo} />
             <About />
-            <ENSC />
-            <Contact />
         </main>
     )
 }
