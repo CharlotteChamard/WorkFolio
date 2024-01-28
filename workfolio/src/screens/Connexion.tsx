@@ -13,14 +13,15 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { NavBarre } from '../component/NavBarre';
+import { Link as RouterLink } from 'react-router-dom';
 
 
 function Copyright(props: any) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
+            <Link color="inherit" component={RouterLink} to="/">
+                WorkFolio
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -83,29 +84,32 @@ export default function Connexion() {
                                 autoComplete="current-password"
                             />
                             <FormControlLabel
-                                control={<Checkbox value="remember" color="primary" />}
+                                control={<Checkbox value="remember" style={{ color: '#CC7D7C' }} />}
                                 label="Enregistrer les informations de connexion"
                             />
                             <Button
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                className="custom-button"  // Ajoutez cette classe
+                                className="custom-button"
                                 sx={{
                                     backgroundColor: '#CC7D7C',
                                     color: '#fff',
                                     mt: 3,
                                     mb: 2,
-                                    '&.custom-button:active': {
-                                        backgroundColor: '#CC7D7C !important',
+                                    '&:hover': {
+                                        backgroundColor: '#CC7D7C',
                                     },
-                                }} >
+                                    '&:active': {
+                                        backgroundColor: '#CC7D7C !important',
+                                    }
+                                }}>
                                 Connexion
                             </Button>
                             <Grid container>
                                 <Grid item>
                                     <Link href="#" variant="body2" color='#000'>
-                                        {"Pas de compte ? Inscrivez-vous"}
+                                        {"Pas de compte? Inscrivez-vous"}
                                     </Link>
                                 </Grid>
                             </Grid>
@@ -114,6 +118,6 @@ export default function Connexion() {
                     <Copyright sx={{ mt: 8, mb: 4 }} />
                 </Container>
             </ThemeProvider>
-        </main>
+        </main >
     );
 }
