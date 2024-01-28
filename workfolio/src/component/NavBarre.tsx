@@ -17,8 +17,19 @@ export const NavBarre = () => {
 
                 <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src={logoMinimaliste} alt="Logo WorkFolio Minimaliste" style={{ height: '100px', marginRight: '30px' }} />
-                    </div> <nav>
+                        <Link
+                            component={RouterLink}
+                            to="/"
+                            color="text.primary"
+                            sx={{ display: 'flex', alignItems: 'center' }}>
+                            <img
+                                src={logoMinimaliste}
+                                alt="Logo WorkFolio Minimaliste"
+                                style={{ height: '100px', marginRight: '30px', cursor: 'pointer' }}
+                            />
+                        </Link>
+                    </div>
+                    <nav>
                         <Link
                             component={RouterLink}
                             to="/"
@@ -48,7 +59,7 @@ export const NavBarre = () => {
                         </Link>
                     </nav>
 
-                    <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5, borderColor: '#412815', color: '#412815' }}>
+                    <Button component={RouterLink} to="/connexion" variant="outlined" sx={{ my: 1, mx: 1.5, borderColor: '#412815', color: '#412815' }}>
                         Connexion
                     </Button>
                 </Toolbar>

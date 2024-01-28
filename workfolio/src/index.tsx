@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Home } from './screens/Home';
 import { ENSC } from './screens/ENSC';
 import { Contact } from './screens/Contact';
+import Connexion from './screens/Connexion';
 
 const router = createBrowserRouter([{
   path: "/",
@@ -19,6 +20,10 @@ const router = createBrowserRouter([{
 {
   path: "/contact",
   element: <Contact />
+},
+{
+  path: "/connexion",
+  element: <Connexion />
 }
 ])
 
