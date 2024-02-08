@@ -56,12 +56,12 @@ export default function Connexion() {
                             alignItems: 'center',
                         }}
                     >
-                        <Avatar sx={{ m: 1, bgcolor: '#CC7D7C' }}>
+                        <Avatar sx={{ m: 1, bgcolor: '#EDD4D4' }}>
                             <LockOutlinedIcon />
                         </Avatar>
-                        <Typography component="h1" variant="h5">
-                            Connexion
-                        </Typography>
+                        <Typography component="h1" variant="h4" sx={{ fontFamily: 'Roboto, sans-serif', color: '#A65D5C' }}>
+                        Connexion
+                    </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                             <TextField
                                 margin="normal"
