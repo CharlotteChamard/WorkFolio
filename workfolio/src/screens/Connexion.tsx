@@ -14,6 +14,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { NavBarre } from '../component/NavBarre';
 import { Link as RouterLink } from 'react-router-dom';
+import axios from "axios";
+import Alert from '@mui/material/Alert';
 
 
 function Copyright(props: any) {
@@ -33,14 +35,31 @@ function Copyright(props: any) {
 const defaultTheme = createTheme();
 
 export default function Connexion() {
+    const [hasError, setHasError] = React.useState(false);
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
+
+        const userCredentials = {
             email: data.get('email'),
             password: data.get('password'),
-        });
+        };
+
+        // Sending a POST request to the backend
+        axios.post('http://localhost:8081/login', userCredentials)
+            .then(response => {
+                // Handle response here (e.g., storing auth token, redirecting)
+                console.log('Login successful', response.data);
+            })
+            .catch(error => {
+                // Handle errors here (e.g., user not found, wrong password)
+                console.error('Login failed', error);
+                setHasError(true); // Set hasError state to true to show the alert
+            });
     };
+
+
+
 
     return (
         <main>
@@ -60,8 +79,8 @@ export default function Connexion() {
                             <LockOutlinedIcon />
                         </Avatar>
                         <Typography component="h1" variant="h4" sx={{ fontFamily: 'Roboto, sans-serif', color: '#A65D5C' }}>
-                        Connexion
-                    </Typography>
+                            Connexion
+                        </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                             <TextField
                                 margin="normal"
@@ -106,6 +125,7 @@ export default function Connexion() {
                                 }}>
                                 Connexion
                             </Button>
+                            {hasError && <Alert severity="error">Identifiants incorrects. Veuillez réessayer.</Alert>}
                             <Grid container>
                                 <Grid item>
                                     <Link href="#" variant="body2" color='#000'>
