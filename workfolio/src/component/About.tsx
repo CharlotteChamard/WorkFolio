@@ -24,9 +24,10 @@ export const About = () => {
                     Secteurs de prédilections :
                 </p>
                 <ul style={{ listStyleType: 'none' }}>
-                    <li> <DesignServicesOutlinedIcon /> Design UX/UI</li>
-                    <li> <AccessibleOutlinedIcon /> Santé : Accessibilité, Handicap</li>
-                    <li> <DvrOutlinedIcon /> Informatique</li>
+                    <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
+                        <DesignServicesOutlinedIcon style={{ marginRight: '0.5rem' }} /> Design UX/UI</li>
+                    <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}><AccessibleOutlinedIcon style={{ marginRight: '0.5rem' }} /> Santé : Accessibilité, Handicap</li>
+                    <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}> <DvrOutlinedIcon style={{ marginRight: '0.5rem' }} /> Informatique</li>
                 </ul>
             </Paper>
         </div >

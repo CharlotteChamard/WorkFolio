@@ -35,7 +35,7 @@ export const NavBarre = () => {
                             to="/"
                             variant="button"
                             color="text.primary"
-                            sx={{ my: 1, mx: 1.5 }}
+                            sx={{ my: 1, mx: 1.5, textDecoration: 'none' }}
                         >
                             Acceuil
                         </Link>
@@ -44,7 +44,7 @@ export const NavBarre = () => {
                             to="/ensc"
                             variant="button"
                             color="text.primary"
-                            sx={{ my: 1, mx: 1.5 }}
+                            sx={{ my: 1, mx: 1.5, textDecoration: 'none' }}
                         >
                             ENSC
                         </Link>
@@ -53,7 +53,7 @@ export const NavBarre = () => {
                             to="/contact"
                             variant="button"
                             color="text.primary"
-                            sx={{ my: 1, mx: 1.5 }}
+                            sx={{ my: 1, mx: 1.5, textDecoration: 'none' }}
                         >
                             Contact
                         </Link>

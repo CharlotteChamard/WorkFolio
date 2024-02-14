@@ -9,7 +9,7 @@ export const Contact = () => {
     return (
         <main className="Contact">
             <NavBarre />
-            <Container component="main" maxWidth="xl">
+            <Container component="main" maxWidth="sm">
                 <Box
                     sx={{
                         marginTop: 5,
@@ -20,8 +20,7 @@ export const Contact = () => {
                     <Typography component="h1" variant="h4" sx={{ fontFamily: 'Roboto, sans-serif', color: '#A65D5C' }}>
                         Contact
                     </Typography>
-                    <Details />
-                </Box>
+                </Box><Details />
             </Container>
         </main>
     );
