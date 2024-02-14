@@ -34,7 +34,7 @@ function Copyright(props: any) {
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export default function Connexion() {
+export default function Inscription() {
     const [hasError, setHasError] = React.useState(false);
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -46,14 +46,14 @@ export default function Connexion() {
         };
 
         // Sending a POST request to the backend
-        axios.post('http://localhost:8081/login', userCredentials)
+        axios.post('http://localhost:8081/adduser', userCredentials)
             .then(response => {
                 // Handle response here (e.g., storing auth token, redirecting)
-                console.log('Login successful', response.data);
+                console.log('Register successful', response.data);
             })
             .catch(error => {
                 // Handle errors here (e.g., user not found, wrong password)
-                console.error('Login failed', error);
+                console.error('Register failed', error);
                 setHasError(true); // Set hasError state to true to show the alert
             });
     };
@@ -79,7 +79,7 @@ export default function Connexion() {
                             <LockOutlinedIcon />
                         </Avatar>
                         <Typography component="h1" variant="h4" sx={{ fontFamily: 'Roboto, sans-serif', color: '#A65D5C' }}>
-                            Connexion
+                            Inscription
                         </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                             <TextField
@@ -104,7 +104,7 @@ export default function Connexion() {
                             />
                             <FormControlLabel
                                 control={<Checkbox value="remember" style={{ color: '#CC7D7C' }} />}
-                                label="Enregistrer les informations de connexion"
+                                label="Enregistrer les informations d'inscripiton"
                             />
                             <Button
                                 type="submit"
@@ -123,15 +123,13 @@ export default function Connexion() {
                                         backgroundColor: '#CC7D7C !important',
                                     }
                                 }}>
-                                Connexion
+                                Envoyer
                             </Button>
                             {hasError && <Alert severity="error">Identifiants incorrects. Veuillez réessayer.</Alert>}
                             <Grid container>
                                 <Grid item>
-                                    <Link component={RouterLink}
-                                        to="/inscription" variant="body2" color='#000'
-                                    >
-                                        {"Pas de compte? Inscrivez-vous"}
+                                    <Link href="#" variant="body2" color='#000'>
+                                        {"Déjà un compte? Connectez-vous"}
                                     </Link>
                                 </Grid>
                             </Grid>

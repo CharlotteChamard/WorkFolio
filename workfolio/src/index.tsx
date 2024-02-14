@@ -7,6 +7,7 @@ import { Home } from './screens/Home';
 import { ENSC } from './screens/ENSC';
 import { Contact } from './screens/Contact';
 import Connexion from './screens/Connexion';
+import Inscription from './screens/Inscription';
 
 const router = createBrowserRouter([{
   path: "/",
@@ -23,6 +24,10 @@ const router = createBrowserRouter([{
 {
   path: "/connexion",
   element: <Connexion />
+},
+{
+  path: "/inscription",
+  element: <Inscription />
 }
 ])
 
